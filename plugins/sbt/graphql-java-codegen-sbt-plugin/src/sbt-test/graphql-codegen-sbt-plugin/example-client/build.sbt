@@ -17,7 +17,7 @@ libraryDependencies ++= Seq(
 
 enablePlugins(GraphQLCodegenPlugin)
 
-graphqlJavaCodegenVersion := Some("3.1.2-SNAPSHOT")
+graphqlJavaCodegenVersion := Some("gio-3.1.2-SNAPSHOT")
 
 GraphQLCodegenPluginDependencies
 
@@ -26,6 +26,7 @@ GraphQLCodegenPluginDependencies
 graphqlSchemaPaths := List("src/main/resources/schema.graphqls")
 modelPackageName := Some("io.github.dreamylost.model")
 apiPackageName := Some("io.github.dreamylost.api")
+generateDefaultResolverImpl := true
 generateClient := true
 generateApis := true
 // Scala collection cannot be used. The latter one uses the put method, which is not supported by Scala collection.

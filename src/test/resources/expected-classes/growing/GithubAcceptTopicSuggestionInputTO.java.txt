@@ -1,0 +1,98 @@
+package com.github.growing;
+
+import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLRequestSerializer;
+import java.util.StringJoiner;
+
+@javax.annotation.Generated(
+    value = "com.kobylynskyi.graphql.codegen.GraphQLCodegen",
+    date = "2020-12-31T23:59:59-0500"
+)
+public class GithubAcceptTopicSuggestionInputTO implements java.io.Serializable {
+
+    private String clientMutationId;
+    @javax.validation.constraints.NotNull
+    private String name;
+    @javax.validation.constraints.NotNull
+    private String repositoryId;
+
+    public GithubAcceptTopicSuggestionInputTO() {
+    }
+
+    public GithubAcceptTopicSuggestionInputTO(String clientMutationId, String name, String repositoryId) {
+        this.clientMutationId = clientMutationId;
+        this.name = name;
+        this.repositoryId = repositoryId;
+    }
+
+    public String getClientMutationId() {
+        return clientMutationId;
+    }
+    public void setClientMutationId(String clientMutationId) {
+        this.clientMutationId = clientMutationId;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getRepositoryId() {
+        return repositoryId;
+    }
+    public void setRepositoryId(String repositoryId) {
+        this.repositoryId = repositoryId;
+    }
+
+
+    @Override
+    public String toString() {
+        StringJoiner joiner = new StringJoiner(", ", "{ ", " }");
+        if (clientMutationId != null) {
+            joiner.add("clientMutationId: " + GraphQLRequestSerializer.getEntry(clientMutationId));
+        }
+        if (name != null) {
+            joiner.add("name: " + GraphQLRequestSerializer.getEntry(name));
+        }
+        if (repositoryId != null) {
+            joiner.add("repositoryId: " + GraphQLRequestSerializer.getEntry(repositoryId));
+        }
+        return joiner.toString();
+    }
+
+    public static GithubAcceptTopicSuggestionInputTO.Builder builder() {
+        return new GithubAcceptTopicSuggestionInputTO.Builder();
+    }
+
+    public static class Builder {
+
+        private String clientMutationId;
+        private String name;
+        private String repositoryId;
+
+        public Builder() {
+        }
+
+        public Builder setClientMutationId(String clientMutationId) {
+            this.clientMutationId = clientMutationId;
+            return this;
+        }
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setRepositoryId(String repositoryId) {
+            this.repositoryId = repositoryId;
+            return this;
+        }
+
+
+        public GithubAcceptTopicSuggestionInputTO build() {
+            return new GithubAcceptTopicSuggestionInputTO(clientMutationId, name, repositoryId);
+        }
+
+    }
+}

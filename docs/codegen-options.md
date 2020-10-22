@@ -46,6 +46,7 @@
 | `parametrizedInputSuffix`                       | String                                                             | ParametrizedInput                             | Sets the suffix for `ParametrizedInput` classes. |
 | `parentInterfaces`                              | *See [parentInterfaces](#option-parentinterfaces)*                 | Empty                                         | Block to define parent interfaces for generated interfaces (query / mutation / subscription / type resolver). *See [parentInterfaces](#option-parentinterfaces)* |
 | `responseProjectionMaxDepth`                    | Integer                                                            | 3                                             | Sets max depth when use `all$()` which for facilitating the construction of projection automatically, the fields on all projections are provided when it be invoked. This is a global configuration, of course, you can use `all$(max)` to set for each method. For self recursive types, too big depth may result in a large number of returned data!|
+| `generateDefaultResolverImpl`                   | Boolean                                                            | false                                         | Can be used to generate default resolvers impl, like `DefaultHeroQueryResolver`.|
 
 
 ### Option `graphqlSchemas`

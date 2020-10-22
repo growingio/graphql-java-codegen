@@ -38,3 +38,10 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 [swagger-codegen](https://github.com/swagger-api/swagger-codegen)
 
+## Update log
+
+This is a mirror repository, which aims to add some customization functions that are not convenient to implement on the source repository.
+
+**2020-10-22** 
+    - support to generate default resolver's impl.
+

@@ -345,4 +345,11 @@ public interface GraphQLCodegenConfiguration {
      */
     Integer getResponseProjectionMaxDepth();
 
+    /**
+     * Default impl will be generate for resolvers
+     *
+     * @return <b>true</b> if client-side classes should be generated DefaultXXXResolver.java
+     */
+    Boolean getGenerateDefaultResolverImpl();
+
 }

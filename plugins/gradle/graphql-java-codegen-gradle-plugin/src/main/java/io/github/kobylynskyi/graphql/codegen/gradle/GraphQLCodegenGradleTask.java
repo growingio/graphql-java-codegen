@@ -77,6 +77,7 @@ public class GraphQLCodegenGradleTask extends DefaultTask implements GraphQLCode
     private Set<String> fieldsWithResolvers = new HashSet<>();
     private Set<String> fieldsWithoutResolvers = new HashSet<>();
     private RelayConfig relayConfig = new RelayConfig();
+    private Boolean generateDefaultResolverImpl = MappingConfigConstants.DEFAULT_GENERATE_DEFAULT_RESOLVER_IMPL;
 
 
     private Boolean generateClient;
@@ -139,6 +140,7 @@ public class GraphQLCodegenGradleTask extends DefaultTask implements GraphQLCode
         mappingConfig.setSubscriptionResolverParentInterface(getSubscriptionResolverParentInterface());
         mappingConfig.setResponseProjectionMaxDepth(getResponseProjectionMaxDepth());
         mappingConfig.setRelayConfig(relayConfig);
+        mappingConfig.setGenerateDefaultResolverImpl(getGenerateDefaultResolverImpl());
 
         new GraphQLCodegen(getActualSchemaPaths(), graphqlQueryIntrospectionResultPath, outputDir, mappingConfig, buildJsonSupplier()).generate();
     }
@@ -688,5 +690,17 @@ public class GraphQLCodegenGradleTask extends DefaultTask implements GraphQLCode
     public void setResponseProjectionMaxDepth(int responseProjectionMaxDepth) {
         this.responseProjectionMaxDepth = responseProjectionMaxDepth;
     }
+
+    @Input
+    @Optional
+    @Override
+    public Boolean getGenerateDefaultResolverImpl() {
+        return generateDefaultResolverImpl;
+    }
+
+    public void setGenerateDefaultResolverImpl(Boolean generateDefaultResolverImpl) {
+        this.generateDefaultResolverImpl = generateDefaultResolverImpl;
+    }
+
 
 }
