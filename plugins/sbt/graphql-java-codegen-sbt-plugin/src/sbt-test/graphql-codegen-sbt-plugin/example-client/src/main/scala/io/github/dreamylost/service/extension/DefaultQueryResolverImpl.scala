@@ -2,7 +2,7 @@ package io.github.dreamylost.service.extension
 
 import com.kobylynskyi.graphql.codegen.extension.GrowingIOConfig
 import io.github.dreamylost.model.EpisodeDO
-import io.github.dreamylost.resolver.impl.{ DefaultDroidQueryResolver, DefaultHeroQueryResolver, DefaultHumanQueryResolver, DefaultHumansQueryResolver }
+import io.github.dreamylost.api.impl.{ DefaultDroidQueryResolver, DefaultHeroQueryResolver, DefaultHumanQueryResolver, DefaultHumansQueryResolver }
 
 /**
  *
