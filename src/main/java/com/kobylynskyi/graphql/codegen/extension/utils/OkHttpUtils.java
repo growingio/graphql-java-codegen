@@ -1,10 +1,8 @@
 package com.kobylynskyi.graphql.codegen.extension.utils;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.kobylynskyi.graphql.codegen.extension.GrowingIOConfig;
 import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLRequest;
 import okhttp3.*;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -15,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  * @author liguobin@growingio.com
  * @version 1.0, 2020/10/22
  */
-final public class OkHttpUtil {
+final public class OkHttpUtils {
 
     private static OkHttpClient client;
 
@@ -39,7 +37,7 @@ final public class OkHttpUtil {
     }
 
 
-    public static <T> T executeGraphQLRemote(final GrowingIOConfig growingIOConfig, final GraphQLRequest graphQLRequest, final TypeReference<T> valueType) {
+    public static <T> T executeGraphQLRemote(final GrowingIOConfig growingIOConfig, final GraphQLRequest graphQLRequest, final Class<T> javaClass) {
 
         try {
             Request.Builder request = new Request.Builder()
@@ -52,23 +50,9 @@ final public class OkHttpUtil {
             }
 
             Response response = getInstance().newCall(request.build()).execute();
-            int httpCode = response.code();
-            JSONObject result;
-            if (httpCode != 200 && response.body() != null) {
-                result = new JSONObject(response.body().string());
-                if (result.isEmpty()) {
-                    throw new Exception("not found any response data");
-                }
-                if (!result.isEmpty() && !result.isNull("errors")) {
-                    throw new Exception(result.getJSONArray("errors").toString());
-                }
-                if (!result.isNull("data") && !result.getJSONObject("data").has(graphQLRequest.getRequest().getOperationName())) {
-                    throw new Exception("not found response data for OperationName: " + graphQLRequest.getRequest().getOperationName());
-                }
-                Object data = result.getJSONObject("data").get(graphQLRequest.getRequest().getOperationName());
-                Object ret = Jackson.mapper().readValue(data.toString(), valueType);
-                return (T) ret;
-
+            if (response.code() == 200 && response.body() != null) {
+                T ret = Jackson.mapper().readValue(response.body().string(), javaClass);
+                return ret;
             } else {
                 throw new IOException("exception in OkHttpUtil, response body is: " + response.toString());
             }

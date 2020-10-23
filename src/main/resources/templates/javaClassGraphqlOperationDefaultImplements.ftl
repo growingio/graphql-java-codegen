@@ -4,9 +4,8 @@ package ${package};
 </#if>
 import com.kobylynskyi.graphql.codegen.extension.GrowingIOConfig;
 import com.kobylynskyi.graphql.codegen.extension.utils.JavaCollectionUtils;
-import com.kobylynskyi.graphql.codegen.extension.utils.OkHttpUtil;
+import com.kobylynskyi.graphql.codegen.extension.utils.OkHttpUtils;
 import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLRequest;
-import com.fasterxml.jackson.core.type.TypeReference;
 
 import java.util.Arrays;
 import java.util.List;
@@ -69,7 +68,8 @@ final public class ${className} implements ${className?substring(defaultResolver
         <#else>
         GraphQLRequest graphQLRequest = new GraphQLRequest(request, null);
         </#if>
-        return OkHttpUtil.executeGraphQLRemote(growingIOConfig, graphQLRequest, new TypeReference<${operation.type}>() {});
+        ${operateNameResponseName} result = OkHttpUtils.executeGraphQLRemote(growingIOConfig, graphQLRequest, ${operateNameResponseName}.class);
+        return result.${operation.name}();
     }
 
 </#list>

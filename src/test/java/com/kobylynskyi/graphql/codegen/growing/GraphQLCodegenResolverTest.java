@@ -31,7 +31,7 @@ class GraphQLCodegenResolverTest {
 
     @AfterEach
     void cleanup() {
-        Utils.deleteDir(outputBuildDir);
+//        Utils.deleteDir(outputBuildDir);
     }
 
     @Test

@@ -36,6 +36,7 @@ public final class DataModelFields {
     public static final String DEFAULT_RESOLVER_IMPL_PREFIX = "defaultResolverImplPrefix";
     public static final String OPERATE_NAME_REQUEST_NAME = "operateNameRequestName";
     public static final String OPERATE_NAME_PROJECTION_NAME = "operateNameProjectionName";
+    public static final String OPERATE_NAME_RESPONSE_NAME = "operateNameResponseName";
 
 
     private DataModelFields() {

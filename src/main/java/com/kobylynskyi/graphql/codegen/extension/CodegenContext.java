@@ -17,35 +17,48 @@ final public class CodegenContext {
     public static final String RESOLVER_DEFAULT_IMPL_PREFIX = "Default";
 
     /**
-     * To get request and project
+     * To get request、response and project
      */
-    private static Map<String, String> operateAndRequestMap = new ConcurrentHashMap<>();
+    private static Map<String, String> operateAndRequestMapping = new ConcurrentHashMap<>();
 
-    private static Map<String, String> operateAndProjectionMap = new ConcurrentHashMap<>();
+    private static Map<String, String> operateAndResponseMapping = new ConcurrentHashMap<>();
 
-    private static Map<String, String> entityAndProjectionMap = new ConcurrentHashMap<>();
+
+    private static Map<String, String> operateAndProjectionMapping = new ConcurrentHashMap<>();
+
+    private static Map<String, String> entityAndProjectionMapping = new ConcurrentHashMap<>();
 
     public static void addOperateRequestMapping(String key, String value) {
-        operateAndRequestMap.put(key, value);
+        operateAndRequestMapping.put(key, value);
     }
 
     public static void addOperateProjectionMapping(String key, String value) {
-        operateAndProjectionMap.put(key, value);
+        operateAndProjectionMapping.put(key, value);
     }
 
     public static void addEntityProjectionMapping(String key, String value) {
-        entityAndProjectionMap.put(key, value);
+        entityAndProjectionMapping.put(key, value);
     }
 
     public static String getRequestByOperate(String key) {
-        return operateAndRequestMap.get(key);
+        return operateAndRequestMapping.get(key);
     }
 
     public static String getProjectionByOperate(String key) {
-        return operateAndProjectionMap.get(key);
+        return operateAndProjectionMapping.get(key);
     }
 
     public static String getProjectionByEntity(String key) {
-        return entityAndProjectionMap.get(key);
+        return entityAndProjectionMapping.get(key);
     }
+
+    public static String getResponseByOperate(String key) {
+        return operateAndResponseMapping.get(key);
+    }
+
+    public static void addOperateResponseMapping(String key, String value) {
+        operateAndResponseMapping.put(key, value);
+    }
+
+
 }
