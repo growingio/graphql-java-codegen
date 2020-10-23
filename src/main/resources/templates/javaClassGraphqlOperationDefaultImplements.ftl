@@ -56,12 +56,12 @@ final public class ${className} implements ${className?substring(defaultResolver
     @Override
     public ${operation.type} ${operation.name}(<#list operation.parameters as param>${param.type} ${param.name}<#if param_has_next>, </#if></#list>) throws Exception {
         ${operateNameRequestName} request = new ${operateNameRequestName}();
-       <#list operation.parameters as param>
+        <#if operation.parameters?? && (operation.parameters?size > 0) >
         List<String> keys = Arrays.asList(<#list operation.parameters as param>"${param.originalName}"<#if param_has_next>, </#if></#list>);
         List<?> values = Arrays.asList(<#list operation.parameters as param>${param.name}<#if param_has_next>, </#if></#list>);
         Map<String, ?> parameters = JavaCollectionUtils.listToMap(keys, values);
         request.getInput().putAll(parameters);
-        </#list>
+        </#if>
         <#if operateNameProjectionName?has_content>
         ${operateNameProjectionName} projection = new ${operateNameProjectionName}().all$(growingIOConfig.getResponseProjectionMaxDepth());
         GraphQLRequest graphQLRequest = new GraphQLRequest(request, projection);

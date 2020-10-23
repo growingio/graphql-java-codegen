@@ -10,8 +10,8 @@ libraryDependencies ++= Seq(
   "org.apache.logging.log4j" % "log4j-core" % "2.8.2",
   "org.apache.logging.log4j" % "log4j-slf4j-impl" % "2.8.2",
   "com.squareup.okhttp3" % "okhttp" % "4.7.2",
-  "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.11.1",
-  "com.fasterxml.jackson.core" % "jackson-databind" % "2.11.1",
+  "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.11.3",
+  "com.fasterxml.jackson.core" % "jackson-databind" % "2.11.3",
   "org.json" % "json" % "20190722")
 
 
