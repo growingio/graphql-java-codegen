@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - master
-      - develop
+      - dev
   pull_request:
     branches:
       - master
-      - develop
+      - dev
 
 jobs:
   build:
@@ -75,43 +75,43 @@ jobs:
       - name: Build maven example-client
         working-directory: plugins/maven/example-client
         run: mvn package
-
-
-  sonar:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Setup Java
-        uses: actions/setup-java@v1
-        with:
-          java-version: 11
-
-      - name: Gradle cache
-        uses: actions/cache@v1
-        with:
-          path: ~/.gradle
-          key: gradle
-
-      - name: Maven cache
-        uses: actions/cache@v1
-        with:
-          path: ~/.m2
-          key: m2
-
-      - name: Loading ivy cache
-        uses: actions/cache@v1
-        with:
-          path: ~/.ivy2/cache
-          key: ${{ runner.os }}-ivy-${{ hashFiles('**/*.sbt') }}
-          restore-keys: |
-            ${{ runner.os }}-ivy-
-
-      - name: Generate code coverage report
-        run: ./gradlew codeCoverageReport --stacktrace
-
-      - name: Generate and publish Sonar report
-        run: ./gradlew sonarqube -Dsonar.projectKey=kobylynskyi_graphql-java-codegen -Dsonar.organization=kobylynskyi -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_LOGIN }} --stacktrace
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#  donot use unittest, but please execute unittest before committing
+#
+#  sonar:
+#    needs: build
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#
+#      - name: Setup Java
+#        uses: actions/setup-java@v1
+#        with:
+#          java-version: 11
+#
+#      - name: Gradle cache
+#        uses: actions/cache@v1
+#        with:
+#          path: ~/.gradle
+#          key: gradle
+#
+#      - name: Maven cache
+#        uses: actions/cache@v1
+#        with:
+#          path: ~/.m2
+#          key: m2
+#
+#      - name: Loading ivy cache
+#        uses: actions/cache@v1
+#        with:
+#          path: ~/.ivy2/cache
+#          key: ${{ runner.os }}-ivy-${{ hashFiles('**/*.sbt') }}
+#          restore-keys: |
+#            ${{ runner.os }}-ivy-
+#
+#      - name: Generate code coverage report
+#        run: ./gradlew codeCoverageReport --stacktrace
+#
+#      - name: Generate and publish Sonar report
+#        run: ./gradlew sonarqube -Dsonar.projectKey=kobylynskyi_graphql-java-codegen -Dsonar.organization=kobylynskyi -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_LOGIN }} --stacktrace
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

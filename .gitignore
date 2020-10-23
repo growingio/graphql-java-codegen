@@ -20,3 +20,5 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 .flattened-pom.xml
+/plugins/gradle/graphql-java-codegen-gradle-plugin/gradlew
+/plugins/gradle/graphql-java-codegen-gradle-plugin/gradle/

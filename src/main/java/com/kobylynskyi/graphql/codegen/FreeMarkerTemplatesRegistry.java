@@ -21,6 +21,7 @@ class FreeMarkerTemplatesRegistry {
     static final Template operationsTemplate;
     static final Template parametrizedInputTemplate;
     static final Template responseProjectionTemplate;
+    static final Template operationsDefaultImplementTemplate;
 
     static {
         Configuration configuration = new Configuration(Configuration.VERSION_2_3_28);
@@ -40,6 +41,7 @@ class FreeMarkerTemplatesRegistry {
             operationsTemplate = configuration.getTemplate("templates/javaClassGraphqlOperations.ftl");
             parametrizedInputTemplate = configuration.getTemplate("templates/javaClassGraphqlParametrizedInput.ftl");
             responseProjectionTemplate = configuration.getTemplate("templates/javaClassGraphqlResponseProjection.ftl");
+            operationsDefaultImplementTemplate = configuration.getTemplate("templates/javaClassGraphqlOperationDefaultImplements.ftl");
         } catch (IOException e) {
             throw new UnableToLoadFreeMarkerTemplateException(e);
         }

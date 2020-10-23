@@ -24,7 +24,7 @@ import java.util.Map;
  *
  * @author kobylynskyi
  */
-class GraphqlTypeToJavaTypeMapper {
+public class GraphqlTypeToJavaTypeMapper {
 
     private static final String JAVA_UTIL_LIST = "java.util.List";
     private static final String JAVA_UTIL_OPTIONAL = "java.util.Optional";
@@ -42,7 +42,7 @@ class GraphqlTypeToJavaTypeMapper {
      * @param graphqlType GraphQL type
      * @return GraphQL type without List/NonNull wrapping
      */
-    static String getNestedTypeName(Type<?> graphqlType) {
+    public static String getNestedTypeName(Type<?> graphqlType) {
         if (graphqlType instanceof TypeName) {
             return ((TypeName) graphqlType).getName();
         } else if (graphqlType instanceof ListType) {

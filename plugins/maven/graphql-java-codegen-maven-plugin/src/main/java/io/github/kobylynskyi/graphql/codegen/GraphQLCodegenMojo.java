@@ -167,6 +167,9 @@ public class GraphQLCodegenMojo extends AbstractMojo implements GraphQLCodegenCo
     @Parameter
     private ParentInterfacesConfig parentInterfaces = new ParentInterfacesConfig();
 
+    @Parameter(defaultValue = MappingConfigConstants.DEFAULT_GENERATE_DEFAULT_RESOLVER_IMPL_STRING)
+    private boolean generateDefaultResolverImpl;
+
     /**
      * The project being built.
      */
@@ -220,6 +223,7 @@ public class GraphQLCodegenMojo extends AbstractMojo implements GraphQLCodegenCo
         mappingConfig.setSubscriptionResolverParentInterface(getSubscriptionResolverParentInterface());
         mappingConfig.setResponseProjectionMaxDepth(getResponseProjectionMaxDepth());
         mappingConfig.setRelayConfig(relayConfig);
+        mappingConfig.setGenerateDefaultResolverImpl(getGenerateDefaultResolverImpl());
 
         MappingConfigSupplier mappingConfigSupplier = buildJsonSupplier(jsonConfigurationFile);
 
@@ -677,6 +681,11 @@ public class GraphQLCodegenMojo extends AbstractMojo implements GraphQLCodegenCo
 
     public void setResponseProjectionMaxDepth(int responseProjectionMaxDepth) {
         this.responseProjectionMaxDepth = responseProjectionMaxDepth;
+    }
+
+    @Override
+    public Boolean getGenerateDefaultResolverImpl() {
+        return generateDefaultResolverImpl;
     }
 
     private static Map<String, List<String>> convertToListsMap(Map<String, String[]> sourceMap) {

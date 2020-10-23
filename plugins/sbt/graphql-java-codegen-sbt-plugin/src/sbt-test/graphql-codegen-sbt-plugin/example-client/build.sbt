@@ -10,14 +10,14 @@ libraryDependencies ++= Seq(
   "org.apache.logging.log4j" % "log4j-core" % "2.8.2",
   "org.apache.logging.log4j" % "log4j-slf4j-impl" % "2.8.2",
   "com.squareup.okhttp3" % "okhttp" % "4.7.2",
-  "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.11.1",
-  "com.fasterxml.jackson.core" % "jackson-databind" % "2.11.1",
+  "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.11.3",
+  "com.fasterxml.jackson.core" % "jackson-databind" % "2.11.3",
   "org.json" % "json" % "20190722")
 
 
 enablePlugins(GraphQLCodegenPlugin)
 
-graphqlJavaCodegenVersion := Some("3.1.2-SNAPSHOT")
+graphqlJavaCodegenVersion := Some("gio-3.1.2-SNAPSHOT")
 
 GraphQLCodegenPluginDependencies
 
@@ -26,6 +26,7 @@ GraphQLCodegenPluginDependencies
 graphqlSchemaPaths := List("src/main/resources/schema.graphqls")
 modelPackageName := Some("io.github.dreamylost.model")
 apiPackageName := Some("io.github.dreamylost.api")
+generateDefaultResolverImpl := true
 generateClient := true
 generateApis := true
 // Scala collection cannot be used. The latter one uses the put method, which is not supported by Scala collection.

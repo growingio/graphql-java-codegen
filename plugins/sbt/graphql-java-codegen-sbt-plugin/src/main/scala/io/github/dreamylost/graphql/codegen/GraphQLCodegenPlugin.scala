@@ -29,7 +29,7 @@ class GraphQLCodegenPlugin(configuration: Configuration, private[codegen] val co
 
   //override this by graphqlJavaCodegenVersion and javaxValidationApiVersion
   private val jValidation = "2.0.1.Final"
-  private val codegen = "3.1.2-SNAPSHOT"
+  private val codegen = "gio-3.1.2-SNAPSHOT"
 
   object GlobalImport extends GraphQLCodegenKeys {
 
@@ -109,7 +109,8 @@ class GraphQLCodegenPlugin(configuration: Configuration, private[codegen] val co
     generateToString := MappingConfigConstants.DEFAULT_TO_STRING,
     // parent interfaces configs:
     parentInterfaces := parentInterfacesConfig,
-    responseProjectionMaxDepth := MappingConfigConstants.DEFAULT_RESPONSE_PROJECTION_MAX_DEPTH
+    responseProjectionMaxDepth := MappingConfigConstants.DEFAULT_RESPONSE_PROJECTION_MAX_DEPTH,
+    generateDefaultResolverImpl := MappingConfigConstants.DEFAULT_GENERATE_DEFAULT_RESOLVER_IMPL
   )
 
   private def getMappingConfig(): Def.Initialize[MappingConfig] = Def.setting[MappingConfig] {
@@ -158,6 +159,7 @@ class GraphQLCodegenPlugin(configuration: Configuration, private[codegen] val co
     mappingConfig.setUseOptionalForNullableReturnTypes((useOptionalForNullableReturnTypes in GraphQLCodegenConfig).value)
     mappingConfig.setResponseProjectionMaxDepth((responseProjectionMaxDepth in GraphQLCodegenConfig).value)
     mappingConfig.setRelayConfig((relayConfig in GraphQLCodegenConfig).value)
+    mappingConfig.setGenerateDefaultResolverImpl((generateDefaultResolverImpl in GraphQLCodegenConfig).value)
 
     sLog.value.debug(s"Current mapping config is <$mappingConfig>")
     mappingConfig

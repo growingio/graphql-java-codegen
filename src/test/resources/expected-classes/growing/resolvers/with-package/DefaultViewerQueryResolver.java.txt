@@ -1,0 +1,37 @@
+package com.github.growing.impl;
+
+import com.kobylynskyi.graphql.codegen.extension.GrowingIOConfig;
+import com.kobylynskyi.graphql.codegen.extension.utils.JavaCollectionUtils;
+import com.kobylynskyi.graphql.codegen.extension.utils.OkHttpUtils;
+import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLRequest;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import com.github.growing.*;
+
+@javax.annotation.Generated(
+    value = "com.kobylynskyi.graphql.codegen.GraphQLCodegen",
+    date = "2020-12-31T23:59:59-0500"
+)
+final public class DefaultViewerQueryResolver implements ViewerQueryResolver {
+
+    private GrowingIOConfig growingIOConfig;
+
+    public DefaultViewerQueryResolver(GrowingIOConfig growingIOConfig) {
+        this.growingIOConfig = growingIOConfig;
+    }
+
+    private DefaultViewerQueryResolver() {}
+
+    @javax.validation.constraints.NotNull
+    @Override
+    public User viewer() throws Exception {
+        ViewerQueryRequest request = new ViewerQueryRequest();
+        UserResponseProjection projection = new UserResponseProjection().all$(growingIOConfig.getResponseProjectionMaxDepth());
+        GraphQLRequest graphQLRequest = new GraphQLRequest(request, projection);
+        ViewerQueryResponse result = OkHttpUtils.executeGraphQLRemote(growingIOConfig, graphQLRequest, ViewerQueryResponse.class);
+        return result.viewer();
+    }
+
+}

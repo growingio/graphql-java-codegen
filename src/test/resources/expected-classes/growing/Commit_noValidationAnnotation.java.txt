@@ -1,0 +1,726 @@
+package com.github.growing;
+
+import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLRequestSerializer;
+import java.util.StringJoiner;
+
+@javax.annotation.Generated(
+    value = "com.kobylynskyi.graphql.codegen.GraphQLCodegen",
+    date = "2020-12-31T23:59:59-0500"
+)
+public class Commit implements java.io.Serializable, Closer, IssueTimelineItem, PullRequestTimelineItem, Subscribable, Node, GitObject, UniformResourceLocatable {
+
+    private String abbreviatedOid;
+    private Integer additions;
+    private PullRequestConnection associatedPullRequests;
+    private GitActor author;
+    private Boolean authoredByCommitter;
+    private String authoredDate;
+    private Blame blame;
+    private Integer changedFiles;
+    private CommitCommentConnection comments;
+    private String commitResourcePath;
+    private String commitUrl;
+    private String committedDate;
+    private Boolean committedViaWeb;
+    private GitActor committer;
+    private Integer deletions;
+    private DeploymentConnection deployments;
+    private CommitHistoryConnection history;
+    private String id;
+    private String message;
+    private String messageBody;
+    private String messageBodyHTML;
+    private String messageHeadline;
+    private String messageHeadlineHTML;
+    private String oid;
+    private CommitConnection parents;
+    private String pushedDate;
+    private Repository repository;
+    private String resourcePath;
+    private GitSignature signature;
+    private Status status;
+    private String tarballUrl;
+    private Tree tree;
+    private String treeResourcePath;
+    private String treeUrl;
+    private String url;
+    private Boolean viewerCanSubscribe;
+    private SubscriptionState viewerSubscription;
+    private String zipballUrl;
+
+    public Commit() {
+    }
+
+    public Commit(String abbreviatedOid, Integer additions, PullRequestConnection associatedPullRequests, GitActor author, Boolean authoredByCommitter, String authoredDate, Blame blame, Integer changedFiles, CommitCommentConnection comments, String commitResourcePath, String commitUrl, String committedDate, Boolean committedViaWeb, GitActor committer, Integer deletions, DeploymentConnection deployments, CommitHistoryConnection history, String id, String message, String messageBody, String messageBodyHTML, String messageHeadline, String messageHeadlineHTML, String oid, CommitConnection parents, String pushedDate, Repository repository, String resourcePath, GitSignature signature, Status status, String tarballUrl, Tree tree, String treeResourcePath, String treeUrl, String url, Boolean viewerCanSubscribe, SubscriptionState viewerSubscription, String zipballUrl) {
+        this.abbreviatedOid = abbreviatedOid;
+        this.additions = additions;
+        this.associatedPullRequests = associatedPullRequests;
+        this.author = author;
+        this.authoredByCommitter = authoredByCommitter;
+        this.authoredDate = authoredDate;
+        this.blame = blame;
+        this.changedFiles = changedFiles;
+        this.comments = comments;
+        this.commitResourcePath = commitResourcePath;
+        this.commitUrl = commitUrl;
+        this.committedDate = committedDate;
+        this.committedViaWeb = committedViaWeb;
+        this.committer = committer;
+        this.deletions = deletions;
+        this.deployments = deployments;
+        this.history = history;
+        this.id = id;
+        this.message = message;
+        this.messageBody = messageBody;
+        this.messageBodyHTML = messageBodyHTML;
+        this.messageHeadline = messageHeadline;
+        this.messageHeadlineHTML = messageHeadlineHTML;
+        this.oid = oid;
+        this.parents = parents;
+        this.pushedDate = pushedDate;
+        this.repository = repository;
+        this.resourcePath = resourcePath;
+        this.signature = signature;
+        this.status = status;
+        this.tarballUrl = tarballUrl;
+        this.tree = tree;
+        this.treeResourcePath = treeResourcePath;
+        this.treeUrl = treeUrl;
+        this.url = url;
+        this.viewerCanSubscribe = viewerCanSubscribe;
+        this.viewerSubscription = viewerSubscription;
+        this.zipballUrl = zipballUrl;
+    }
+
+    public String getAbbreviatedOid() {
+        return abbreviatedOid;
+    }
+    public void setAbbreviatedOid(String abbreviatedOid) {
+        this.abbreviatedOid = abbreviatedOid;
+    }
+
+    public Integer getAdditions() {
+        return additions;
+    }
+    public void setAdditions(Integer additions) {
+        this.additions = additions;
+    }
+
+    public PullRequestConnection getAssociatedPullRequests() {
+        return associatedPullRequests;
+    }
+    public void setAssociatedPullRequests(PullRequestConnection associatedPullRequests) {
+        this.associatedPullRequests = associatedPullRequests;
+    }
+
+    public GitActor getAuthor() {
+        return author;
+    }
+    public void setAuthor(GitActor author) {
+        this.author = author;
+    }
+
+    public Boolean getAuthoredByCommitter() {
+        return authoredByCommitter;
+    }
+    public void setAuthoredByCommitter(Boolean authoredByCommitter) {
+        this.authoredByCommitter = authoredByCommitter;
+    }
+
+    public String getAuthoredDate() {
+        return authoredDate;
+    }
+    public void setAuthoredDate(String authoredDate) {
+        this.authoredDate = authoredDate;
+    }
+
+    public Blame getBlame() {
+        return blame;
+    }
+    public void setBlame(Blame blame) {
+        this.blame = blame;
+    }
+
+    public Integer getChangedFiles() {
+        return changedFiles;
+    }
+    public void setChangedFiles(Integer changedFiles) {
+        this.changedFiles = changedFiles;
+    }
+
+    public CommitCommentConnection getComments() {
+        return comments;
+    }
+    public void setComments(CommitCommentConnection comments) {
+        this.comments = comments;
+    }
+
+    public String getCommitResourcePath() {
+        return commitResourcePath;
+    }
+    public void setCommitResourcePath(String commitResourcePath) {
+        this.commitResourcePath = commitResourcePath;
+    }
+
+    public String getCommitUrl() {
+        return commitUrl;
+    }
+    public void setCommitUrl(String commitUrl) {
+        this.commitUrl = commitUrl;
+    }
+
+    public String getCommittedDate() {
+        return committedDate;
+    }
+    public void setCommittedDate(String committedDate) {
+        this.committedDate = committedDate;
+    }
+
+    public Boolean getCommittedViaWeb() {
+        return committedViaWeb;
+    }
+    public void setCommittedViaWeb(Boolean committedViaWeb) {
+        this.committedViaWeb = committedViaWeb;
+    }
+
+    public GitActor getCommitter() {
+        return committer;
+    }
+    public void setCommitter(GitActor committer) {
+        this.committer = committer;
+    }
+
+    public Integer getDeletions() {
+        return deletions;
+    }
+    public void setDeletions(Integer deletions) {
+        this.deletions = deletions;
+    }
+
+    public DeploymentConnection getDeployments() {
+        return deployments;
+    }
+    public void setDeployments(DeploymentConnection deployments) {
+        this.deployments = deployments;
+    }
+
+    public CommitHistoryConnection getHistory() {
+        return history;
+    }
+    public void setHistory(CommitHistoryConnection history) {
+        this.history = history;
+    }
+
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getMessageBody() {
+        return messageBody;
+    }
+    public void setMessageBody(String messageBody) {
+        this.messageBody = messageBody;
+    }
+
+    public String getMessageBodyHTML() {
+        return messageBodyHTML;
+    }
+    public void setMessageBodyHTML(String messageBodyHTML) {
+        this.messageBodyHTML = messageBodyHTML;
+    }
+
+    public String getMessageHeadline() {
+        return messageHeadline;
+    }
+    public void setMessageHeadline(String messageHeadline) {
+        this.messageHeadline = messageHeadline;
+    }
+
+    public String getMessageHeadlineHTML() {
+        return messageHeadlineHTML;
+    }
+    public void setMessageHeadlineHTML(String messageHeadlineHTML) {
+        this.messageHeadlineHTML = messageHeadlineHTML;
+    }
+
+    public String getOid() {
+        return oid;
+    }
+    public void setOid(String oid) {
+        this.oid = oid;
+    }
+
+    public CommitConnection getParents() {
+        return parents;
+    }
+    public void setParents(CommitConnection parents) {
+        this.parents = parents;
+    }
+
+    public String getPushedDate() {
+        return pushedDate;
+    }
+    public void setPushedDate(String pushedDate) {
+        this.pushedDate = pushedDate;
+    }
+
+    public Repository getRepository() {
+        return repository;
+    }
+    public void setRepository(Repository repository) {
+        this.repository = repository;
+    }
+
+    public String getResourcePath() {
+        return resourcePath;
+    }
+    public void setResourcePath(String resourcePath) {
+        this.resourcePath = resourcePath;
+    }
+
+    public GitSignature getSignature() {
+        return signature;
+    }
+    public void setSignature(GitSignature signature) {
+        this.signature = signature;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public String getTarballUrl() {
+        return tarballUrl;
+    }
+    public void setTarballUrl(String tarballUrl) {
+        this.tarballUrl = tarballUrl;
+    }
+
+    public Tree getTree() {
+        return tree;
+    }
+    public void setTree(Tree tree) {
+        this.tree = tree;
+    }
+
+    public String getTreeResourcePath() {
+        return treeResourcePath;
+    }
+    public void setTreeResourcePath(String treeResourcePath) {
+        this.treeResourcePath = treeResourcePath;
+    }
+
+    public String getTreeUrl() {
+        return treeUrl;
+    }
+    public void setTreeUrl(String treeUrl) {
+        this.treeUrl = treeUrl;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public Boolean getViewerCanSubscribe() {
+        return viewerCanSubscribe;
+    }
+    public void setViewerCanSubscribe(Boolean viewerCanSubscribe) {
+        this.viewerCanSubscribe = viewerCanSubscribe;
+    }
+
+    public SubscriptionState getViewerSubscription() {
+        return viewerSubscription;
+    }
+    public void setViewerSubscription(SubscriptionState viewerSubscription) {
+        this.viewerSubscription = viewerSubscription;
+    }
+
+    public String getZipballUrl() {
+        return zipballUrl;
+    }
+    public void setZipballUrl(String zipballUrl) {
+        this.zipballUrl = zipballUrl;
+    }
+
+
+    @Override
+    public String toString() {
+        StringJoiner joiner = new StringJoiner(", ", "{ ", " }");
+        if (abbreviatedOid != null) {
+            joiner.add("abbreviatedOid: " + GraphQLRequestSerializer.getEntry(abbreviatedOid));
+        }
+        if (additions != null) {
+            joiner.add("additions: " + GraphQLRequestSerializer.getEntry(additions));
+        }
+        if (associatedPullRequests != null) {
+            joiner.add("associatedPullRequests: " + GraphQLRequestSerializer.getEntry(associatedPullRequests));
+        }
+        if (author != null) {
+            joiner.add("author: " + GraphQLRequestSerializer.getEntry(author));
+        }
+        if (authoredByCommitter != null) {
+            joiner.add("authoredByCommitter: " + GraphQLRequestSerializer.getEntry(authoredByCommitter));
+        }
+        if (authoredDate != null) {
+            joiner.add("authoredDate: " + GraphQLRequestSerializer.getEntry(authoredDate));
+        }
+        if (blame != null) {
+            joiner.add("blame: " + GraphQLRequestSerializer.getEntry(blame));
+        }
+        if (changedFiles != null) {
+            joiner.add("changedFiles: " + GraphQLRequestSerializer.getEntry(changedFiles));
+        }
+        if (comments != null) {
+            joiner.add("comments: " + GraphQLRequestSerializer.getEntry(comments));
+        }
+        if (commitResourcePath != null) {
+            joiner.add("commitResourcePath: " + GraphQLRequestSerializer.getEntry(commitResourcePath));
+        }
+        if (commitUrl != null) {
+            joiner.add("commitUrl: " + GraphQLRequestSerializer.getEntry(commitUrl));
+        }
+        if (committedDate != null) {
+            joiner.add("committedDate: " + GraphQLRequestSerializer.getEntry(committedDate));
+        }
+        if (committedViaWeb != null) {
+            joiner.add("committedViaWeb: " + GraphQLRequestSerializer.getEntry(committedViaWeb));
+        }
+        if (committer != null) {
+            joiner.add("committer: " + GraphQLRequestSerializer.getEntry(committer));
+        }
+        if (deletions != null) {
+            joiner.add("deletions: " + GraphQLRequestSerializer.getEntry(deletions));
+        }
+        if (deployments != null) {
+            joiner.add("deployments: " + GraphQLRequestSerializer.getEntry(deployments));
+        }
+        if (history != null) {
+            joiner.add("history: " + GraphQLRequestSerializer.getEntry(history));
+        }
+        if (id != null) {
+            joiner.add("id: " + GraphQLRequestSerializer.getEntry(id));
+        }
+        if (message != null) {
+            joiner.add("message: " + GraphQLRequestSerializer.getEntry(message));
+        }
+        if (messageBody != null) {
+            joiner.add("messageBody: " + GraphQLRequestSerializer.getEntry(messageBody));
+        }
+        if (messageBodyHTML != null) {
+            joiner.add("messageBodyHTML: " + GraphQLRequestSerializer.getEntry(messageBodyHTML));
+        }
+        if (messageHeadline != null) {
+            joiner.add("messageHeadline: " + GraphQLRequestSerializer.getEntry(messageHeadline));
+        }
+        if (messageHeadlineHTML != null) {
+            joiner.add("messageHeadlineHTML: " + GraphQLRequestSerializer.getEntry(messageHeadlineHTML));
+        }
+        if (oid != null) {
+            joiner.add("oid: " + GraphQLRequestSerializer.getEntry(oid));
+        }
+        if (parents != null) {
+            joiner.add("parents: " + GraphQLRequestSerializer.getEntry(parents));
+        }
+        if (pushedDate != null) {
+            joiner.add("pushedDate: " + GraphQLRequestSerializer.getEntry(pushedDate));
+        }
+        if (repository != null) {
+            joiner.add("repository: " + GraphQLRequestSerializer.getEntry(repository));
+        }
+        if (resourcePath != null) {
+            joiner.add("resourcePath: " + GraphQLRequestSerializer.getEntry(resourcePath));
+        }
+        if (signature != null) {
+            joiner.add("signature: " + GraphQLRequestSerializer.getEntry(signature));
+        }
+        if (status != null) {
+            joiner.add("status: " + GraphQLRequestSerializer.getEntry(status));
+        }
+        if (tarballUrl != null) {
+            joiner.add("tarballUrl: " + GraphQLRequestSerializer.getEntry(tarballUrl));
+        }
+        if (tree != null) {
+            joiner.add("tree: " + GraphQLRequestSerializer.getEntry(tree));
+        }
+        if (treeResourcePath != null) {
+            joiner.add("treeResourcePath: " + GraphQLRequestSerializer.getEntry(treeResourcePath));
+        }
+        if (treeUrl != null) {
+            joiner.add("treeUrl: " + GraphQLRequestSerializer.getEntry(treeUrl));
+        }
+        if (url != null) {
+            joiner.add("url: " + GraphQLRequestSerializer.getEntry(url));
+        }
+        if (viewerCanSubscribe != null) {
+            joiner.add("viewerCanSubscribe: " + GraphQLRequestSerializer.getEntry(viewerCanSubscribe));
+        }
+        if (viewerSubscription != null) {
+            joiner.add("viewerSubscription: " + GraphQLRequestSerializer.getEntry(viewerSubscription));
+        }
+        if (zipballUrl != null) {
+            joiner.add("zipballUrl: " + GraphQLRequestSerializer.getEntry(zipballUrl));
+        }
+        return joiner.toString();
+    }
+
+    public static Commit.Builder builder() {
+        return new Commit.Builder();
+    }
+
+    public static class Builder {
+
+        private String abbreviatedOid;
+        private Integer additions;
+        private PullRequestConnection associatedPullRequests;
+        private GitActor author;
+        private Boolean authoredByCommitter;
+        private String authoredDate;
+        private Blame blame;
+        private Integer changedFiles;
+        private CommitCommentConnection comments;
+        private String commitResourcePath;
+        private String commitUrl;
+        private String committedDate;
+        private Boolean committedViaWeb;
+        private GitActor committer;
+        private Integer deletions;
+        private DeploymentConnection deployments;
+        private CommitHistoryConnection history;
+        private String id;
+        private String message;
+        private String messageBody;
+        private String messageBodyHTML;
+        private String messageHeadline;
+        private String messageHeadlineHTML;
+        private String oid;
+        private CommitConnection parents;
+        private String pushedDate;
+        private Repository repository;
+        private String resourcePath;
+        private GitSignature signature;
+        private Status status;
+        private String tarballUrl;
+        private Tree tree;
+        private String treeResourcePath;
+        private String treeUrl;
+        private String url;
+        private Boolean viewerCanSubscribe;
+        private SubscriptionState viewerSubscription;
+        private String zipballUrl;
+
+        public Builder() {
+        }
+
+        public Builder setAbbreviatedOid(String abbreviatedOid) {
+            this.abbreviatedOid = abbreviatedOid;
+            return this;
+        }
+
+        public Builder setAdditions(Integer additions) {
+            this.additions = additions;
+            return this;
+        }
+
+        public Builder setAssociatedPullRequests(PullRequestConnection associatedPullRequests) {
+            this.associatedPullRequests = associatedPullRequests;
+            return this;
+        }
+
+        public Builder setAuthor(GitActor author) {
+            this.author = author;
+            return this;
+        }
+
+        public Builder setAuthoredByCommitter(Boolean authoredByCommitter) {
+            this.authoredByCommitter = authoredByCommitter;
+            return this;
+        }
+
+        public Builder setAuthoredDate(String authoredDate) {
+            this.authoredDate = authoredDate;
+            return this;
+        }
+
+        public Builder setBlame(Blame blame) {
+            this.blame = blame;
+            return this;
+        }
+
+        public Builder setChangedFiles(Integer changedFiles) {
+            this.changedFiles = changedFiles;
+            return this;
+        }
+
+        public Builder setComments(CommitCommentConnection comments) {
+            this.comments = comments;
+            return this;
+        }
+
+        public Builder setCommitResourcePath(String commitResourcePath) {
+            this.commitResourcePath = commitResourcePath;
+            return this;
+        }
+
+        public Builder setCommitUrl(String commitUrl) {
+            this.commitUrl = commitUrl;
+            return this;
+        }
+
+        public Builder setCommittedDate(String committedDate) {
+            this.committedDate = committedDate;
+            return this;
+        }
+
+        public Builder setCommittedViaWeb(Boolean committedViaWeb) {
+            this.committedViaWeb = committedViaWeb;
+            return this;
+        }
+
+        public Builder setCommitter(GitActor committer) {
+            this.committer = committer;
+            return this;
+        }
+
+        public Builder setDeletions(Integer deletions) {
+            this.deletions = deletions;
+            return this;
+        }
+
+        public Builder setDeployments(DeploymentConnection deployments) {
+            this.deployments = deployments;
+            return this;
+        }
+
+        public Builder setHistory(CommitHistoryConnection history) {
+            this.history = history;
+            return this;
+        }
+
+        public Builder setId(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder setMessage(String message) {
+            this.message = message;
+            return this;
+        }
+
+        public Builder setMessageBody(String messageBody) {
+            this.messageBody = messageBody;
+            return this;
+        }
+
+        public Builder setMessageBodyHTML(String messageBodyHTML) {
+            this.messageBodyHTML = messageBodyHTML;
+            return this;
+        }
+
+        public Builder setMessageHeadline(String messageHeadline) {
+            this.messageHeadline = messageHeadline;
+            return this;
+        }
+
+        public Builder setMessageHeadlineHTML(String messageHeadlineHTML) {
+            this.messageHeadlineHTML = messageHeadlineHTML;
+            return this;
+        }
+
+        public Builder setOid(String oid) {
+            this.oid = oid;
+            return this;
+        }
+
+        public Builder setParents(CommitConnection parents) {
+            this.parents = parents;
+            return this;
+        }
+
+        public Builder setPushedDate(String pushedDate) {
+            this.pushedDate = pushedDate;
+            return this;
+        }
+
+        public Builder setRepository(Repository repository) {
+            this.repository = repository;
+            return this;
+        }
+
+        public Builder setResourcePath(String resourcePath) {
+            this.resourcePath = resourcePath;
+            return this;
+        }
+
+        public Builder setSignature(GitSignature signature) {
+            this.signature = signature;
+            return this;
+        }
+
+        public Builder setStatus(Status status) {
+            this.status = status;
+            return this;
+        }
+
+        public Builder setTarballUrl(String tarballUrl) {
+            this.tarballUrl = tarballUrl;
+            return this;
+        }
+
+        public Builder setTree(Tree tree) {
+            this.tree = tree;
+            return this;
+        }
+
+        public Builder setTreeResourcePath(String treeResourcePath) {
+            this.treeResourcePath = treeResourcePath;
+            return this;
+        }
+
+        public Builder setTreeUrl(String treeUrl) {
+            this.treeUrl = treeUrl;
+            return this;
+        }
+
+        public Builder setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+
+        public Builder setViewerCanSubscribe(Boolean viewerCanSubscribe) {
+            this.viewerCanSubscribe = viewerCanSubscribe;
+            return this;
+        }
+
+        public Builder setViewerSubscription(SubscriptionState viewerSubscription) {
+            this.viewerSubscription = viewerSubscription;
+            return this;
+        }
+
+        public Builder setZipballUrl(String zipballUrl) {
+            this.zipballUrl = zipballUrl;
+            return this;
+        }
+
+
+        public Commit build() {
+            return new Commit(abbreviatedOid, additions, associatedPullRequests, author, authoredByCommitter, authoredDate, blame, changedFiles, comments, commitResourcePath, commitUrl, committedDate, committedViaWeb, committer, deletions, deployments, history, id, message, messageBody, messageBodyHTML, messageHeadline, messageHeadlineHTML, oid, parents, pushedDate, repository, resourcePath, signature, status, tarballUrl, tree, treeResourcePath, treeUrl, url, viewerCanSubscribe, viewerSubscription, zipballUrl);
+        }
+
+    }
+}

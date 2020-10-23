@@ -109,6 +109,8 @@ trait GraphQLCodegenKeys {
 
   val relayConfig = settingKey[RelayConfig]("Can be used to supply a custom configuration for Relay support.")
 
+  val generateDefaultResolverImpl = settingKey[Boolean]("Can be used to generate resolvers impl.")
+
   //for version
   val javaxValidationApiVersion = settingKey[Option[String]]("javax-validation-api version")
   val graphqlJavaCodegenVersion = settingKey[Option[String]]("graphql java codegen version")

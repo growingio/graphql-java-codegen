@@ -1,0 +1,40 @@
+package com.github.growing.impl;
+
+import com.kobylynskyi.graphql.codegen.extension.GrowingIOConfig;
+import com.kobylynskyi.graphql.codegen.extension.utils.JavaCollectionUtils;
+import com.kobylynskyi.graphql.codegen.extension.utils.OkHttpUtils;
+import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLRequest;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import com.github.growing.*;
+
+@javax.annotation.Generated(
+    value = "com.kobylynskyi.graphql.codegen.GraphQLCodegen",
+    date = "2020-12-31T23:59:59-0500"
+)
+final public class DefaultAcceptTopicSuggestionMutationResolver implements AcceptTopicSuggestionMutationResolver {
+
+    private GrowingIOConfig growingIOConfig;
+
+    public DefaultAcceptTopicSuggestionMutationResolver(GrowingIOConfig growingIOConfig) {
+        this.growingIOConfig = growingIOConfig;
+    }
+
+    private DefaultAcceptTopicSuggestionMutationResolver() {}
+
+    @Override
+    public AcceptTopicSuggestionPayload acceptTopicSuggestion(AcceptTopicSuggestionInput input) throws Exception {
+        AcceptTopicSuggestionMutationRequest request = new AcceptTopicSuggestionMutationRequest();
+        List<String> keys = Arrays.asList("input");
+        List<?> values = Arrays.asList(input);
+        Map<String, ?> parameters = JavaCollectionUtils.listToMap(keys, values);
+        request.getInput().putAll(parameters);
+        AcceptTopicSuggestionPayloadResponseProjection projection = new AcceptTopicSuggestionPayloadResponseProjection().all$(growingIOConfig.getResponseProjectionMaxDepth());
+        GraphQLRequest graphQLRequest = new GraphQLRequest(request, projection);
+        AcceptTopicSuggestionMutationResponse result = OkHttpUtils.executeGraphQLRemote(growingIOConfig, graphQLRequest, AcceptTopicSuggestionMutationResponse.class);
+        return result.acceptTopicSuggestion();
+    }
+
+}

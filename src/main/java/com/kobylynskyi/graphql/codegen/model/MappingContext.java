@@ -236,6 +236,11 @@ public class MappingContext implements GraphQLCodegenConfiguration {
         return config.getResolverParentInterface();
     }
 
+    @Override
+    public Boolean getGenerateDefaultResolverImpl() {
+        return config.getGenerateDefaultResolverImpl();
+    }
+
     public ExtendedDocument getDocument() {
         return document;
     }

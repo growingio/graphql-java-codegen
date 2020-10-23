@@ -42,6 +42,11 @@ public class MappingConfigConstants {
     public static final String DEFAULT_RESPONSE_PROJECTION_MAX_DEPTH_STRING = "3";
     public static final int DEFAULT_RESPONSE_PROJECTION_MAX_DEPTH = 3;
 
+    public static final String DEFAULT_GENERATE_DEFAULT_RESOLVER_IMPL_STRING = "false";
+    public static final boolean DEFAULT_GENERATE_DEFAULT_RESOLVER_IMPL = false;
+
+
+
     private MappingConfigConstants() {
     }
 }
