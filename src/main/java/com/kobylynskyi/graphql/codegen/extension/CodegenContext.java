@@ -17,7 +17,7 @@ final public class CodegenContext {
     public static final String RESOLVER_DEFAULT_IMPL_PREFIX = "Default";
 
     /**
-     * To get request、response and project
+     * To get request、response and projection
      */
     private static Map<String, String> operateAndRequestMapping = new ConcurrentHashMap<>();
 
@@ -58,6 +58,10 @@ final public class CodegenContext {
 
     public static void addOperateResponseMapping(String key, String value) {
         operateAndResponseMapping.put(key, value);
+    }
+
+    private CodegenContext() {
+
     }
 
 

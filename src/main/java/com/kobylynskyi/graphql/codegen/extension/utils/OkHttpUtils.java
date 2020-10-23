@@ -62,5 +62,8 @@ final public class OkHttpUtils {
         }
     }
 
+    private OkHttpUtils() {
+
+    }
 
 }

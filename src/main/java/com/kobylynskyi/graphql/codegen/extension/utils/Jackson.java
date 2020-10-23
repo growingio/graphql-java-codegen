@@ -10,6 +10,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 final public class Jackson {
 
+    private Jackson() {
+
+    }
+
     public static ObjectMapper mapper() {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);

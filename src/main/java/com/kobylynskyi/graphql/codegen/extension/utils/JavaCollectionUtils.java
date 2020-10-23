@@ -10,6 +10,10 @@ import java.util.stream.Collectors;
  */
 final public class JavaCollectionUtils {
 
+    private JavaCollectionUtils() {
+
+    }
+
     public static <K, V> Map<K, V> listToMap(final List<K> keys, final List<V> values) {
         return keys.stream().collect(Collectors.toMap(k -> k, k -> values.get(keys.indexOf(k))));
 
