@@ -1,5 +1,7 @@
 package com.kobylynskyi.graphql.codegen.extension;
 
+import java.util.Map;
+
 /**
  * @author liguobin@growingio.com
  * @version 1.0, 2020/10/22
@@ -8,42 +10,30 @@ public class GrowingIOConfig {
 
     private Integer responseProjectionMaxDepth = 3;
     private String graphQLServerHost;
-    private String authoritykey;
-    private String authorityValue;
-
+    private Map<String, String> headers;
 
     public GrowingIOConfig(String graphQLServerHost) {
         this.graphQLServerHost = graphQLServerHost;
     }
 
-    public GrowingIOConfig(Integer responseProjectionMaxDepth, String graphQLServerHost) {
+    public GrowingIOConfig(String graphQLServerHost, Map<String, String> headers) {
+        this.graphQLServerHost = graphQLServerHost;
+        this.headers = headers;
+    }
+
+    public GrowingIOConfig(String graphQLServerHost, Integer responseProjectionMaxDepth) {
         this.responseProjectionMaxDepth = responseProjectionMaxDepth;
         this.graphQLServerHost = graphQLServerHost;
     }
 
-    public GrowingIOConfig(String graphQLServerHost, String authoritykey, String authorityValue) {
-        this.graphQLServerHost = graphQLServerHost;
-        this.authoritykey = authoritykey;
-        this.authorityValue = authorityValue;
-    }
-
-    public GrowingIOConfig(Integer responseProjectionMaxDepth, String graphQLServerHost, String authoritykey, String authorityValue) {
+    public GrowingIOConfig(String graphQLServerHost, Integer responseProjectionMaxDepth, Map<String, String> headers) {
         this.responseProjectionMaxDepth = responseProjectionMaxDepth;
         this.graphQLServerHost = graphQLServerHost;
-        this.authoritykey = authoritykey;
-        this.authorityValue = authorityValue;
+        this.headers = headers;
     }
 
 
     private GrowingIOConfig() {
-    }
-
-    public String getAuthorityValue() {
-        return authorityValue;
-    }
-
-    public String getAuthoritykey() {
-        return authoritykey;
     }
 
     public Integer getResponseProjectionMaxDepth() {
@@ -52,6 +42,10 @@ public class GrowingIOConfig {
 
     public String getGraphQLServerHost() {
         return graphQLServerHost;
+    }
+
+    public Map<String, String> getHeaders() {
+        return headers;
     }
 
 }
