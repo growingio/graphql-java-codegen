@@ -4,7 +4,6 @@ import com.kobylynskyi.graphql.codegen.extension.GrowingIOConfig;
 import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLRequest;
 import okhttp3.*;
 
-import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -38,14 +37,14 @@ final public class OkHttpUtils {
     }
 
 
-    public static <T> T executeGraphQLRemote(final GrowingIOConfig growingIOConfig, final GraphQLRequest graphQLRequest, final Class<T> javaClass) throws IOException {
+    public static <T> T executeGraphQLRemote(final GrowingIOConfig growingIOConfig, final GraphQLRequest graphQLRequest, final Class<T> javaClass) throws Exception {
 
         if (growingIOConfig == null) {
-            throw new IOException("exception in OkHttpUtils, GrowingIOConfig must be not equals to null");
+            throw new Exception("exception in OkHttpUtils, GrowingIOConfig must be not equals to null");
         }
 
         if (growingIOConfig.getGraphQLServerHost() == null) {
-            throw new IOException("exception in OkHttpUtils, graphQLServerHost must be not equals to null");
+            throw new Exception("exception in OkHttpUtils, graphQLServerHost must be not equals to null");
         }
 
         Request.Builder request = new Request.Builder()
@@ -64,7 +63,7 @@ final public class OkHttpUtils {
             T ret = Jackson.mapper().readValue(response.body().string(), javaClass);
             return ret;
         } else {
-            throw new IOException("exception in OkHttpUtils, response body is: " + response.toString());
+            throw new Exception("exception in OkHttpUtils, response body is: " + response.toString());
         }
 
     }
