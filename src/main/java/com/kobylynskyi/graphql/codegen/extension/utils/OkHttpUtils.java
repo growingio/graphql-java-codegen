@@ -5,6 +5,7 @@ import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLRequest;
 import okhttp3.*;
 
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -37,29 +38,35 @@ final public class OkHttpUtils {
     }
 
 
-    public static <T> T executeGraphQLRemote(final GrowingIOConfig growingIOConfig, final GraphQLRequest graphQLRequest, final Class<T> javaClass) {
+    public static <T> T executeGraphQLRemote(final GrowingIOConfig growingIOConfig, final GraphQLRequest graphQLRequest, final Class<T> javaClass) throws IOException {
 
-        try {
-            Request.Builder request = new Request.Builder()
-                    .url(growingIOConfig.getGraphQLServerHost())
-                    .post(RequestBody.create(graphQLRequest.toHttpJsonBody(), MediaType.parse(DEFAULT_MEDIA_TYPE)));
-
-            if (growingIOConfig.getAuthoritykey() != null && !growingIOConfig.getAuthoritykey().equals("") &&
-                    growingIOConfig.getAuthorityValue() != null && !growingIOConfig.getAuthorityValue().equals("")) {
-                request.addHeader(growingIOConfig.getAuthoritykey(), growingIOConfig.getAuthorityValue());
-            }
-
-            Response response = getInstance().newCall(request.build()).execute();
-            if (response.code() == 200 && response.body() != null) {
-                T ret = Jackson.mapper().readValue(response.body().string(), javaClass);
-                return ret;
-            } else {
-                throw new IOException("exception in OkHttpUtil, response body is: " + response.toString());
-            }
-        } catch (Exception ex) {
-            System.err.println(ex.getLocalizedMessage());
-            return null;
+        if (growingIOConfig == null) {
+            throw new IOException("exception in OkHttpUtils, GrowingIOConfig must be not equals to null");
         }
+
+        if (growingIOConfig.getGraphQLServerHost() == null) {
+            throw new IOException("exception in OkHttpUtils, graphQLServerHost must be not equals to null");
+        }
+
+        Request.Builder request = new Request.Builder()
+                .url(growingIOConfig.getGraphQLServerHost())
+                .post(RequestBody.create(graphQLRequest.toHttpJsonBody(), MediaType.parse(DEFAULT_MEDIA_TYPE)));
+
+        Map<String, String> headers = growingIOConfig.getHeaders();
+
+        if (!headers.isEmpty()) {
+            for (String header : headers.keySet()) {
+                request.addHeader(header, headers.get(header));
+            }
+        }
+        Response response = getInstance().newCall(request.build()).execute();
+        if (response.code() == 200 && response.body() != null) {
+            T ret = Jackson.mapper().readValue(response.body().string(), javaClass);
+            return ret;
+        } else {
+            throw new IOException("exception in OkHttpUtils, response body is: " + response.toString());
+        }
+
     }
 
     private OkHttpUtils() {
