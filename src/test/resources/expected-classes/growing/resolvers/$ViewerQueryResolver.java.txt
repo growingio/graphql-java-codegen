@@ -13,15 +13,15 @@ import java.util.Map;
     value = "com.kobylynskyi.graphql.codegen.GraphQLCodegen",
     date = "2020-12-31T23:59:59-0500"
 )
-final public class DefaultViewerQueryResolver implements ViewerQueryResolver {
+final public class $ViewerQueryResolver implements ViewerQueryResolver {
 
     private GrowingIOConfig growingIOConfig;
 
-    public DefaultViewerQueryResolver(GrowingIOConfig growingIOConfig) {
+    public $ViewerQueryResolver(GrowingIOConfig growingIOConfig) {
         this.growingIOConfig = growingIOConfig;
     }
 
-    private DefaultViewerQueryResolver() {}
+    private $ViewerQueryResolver() {}
 
     @javax.validation.constraints.NotNull
     @Override

@@ -5,16 +5,18 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Save operates map to [requests, projections]
+ * TODO This class should be removed and the context information should be calculated during document parsing
  *
  * @author liguobin@growingio.com
  * @version 1.0, 2020/10/21
+ * @see [https://github.com/kobylynskyi/graphql-java-codegen/blob/bdc689ed3007e29687127ecf21389c47e7ad5341/src/main/java/com/kobylynskyi/graphql/codegen/model/MappingContext.java#L290]
  */
 final public class CodegenContext {
 
     /**
      * Configuration is not supported at the moment
      */
-    public static final String RESOLVER_DEFAULT_IMPL_PREFIX = "Default";
+    public static final String RESOLVER_DEFAULT_IMPL_PREFIX = "$";
 
     /**
      * To get request、response and projection
