@@ -1,8 +1,8 @@
 package io.github.dreamylost.service.extension
 
 import com.kobylynskyi.graphql.codegen.extension.GrowingIOConfig
+import io.github.dreamylost.api.impl._
 import io.github.dreamylost.model.EpisodeDO
-import io.github.dreamylost.api.impl.{ DefaultDroidQueryResolver, DefaultHeroQueryResolver, DefaultHumanQueryResolver, DefaultHumansQueryResolver }
 
 /**
  *
@@ -12,16 +12,16 @@ import io.github.dreamylost.api.impl.{ DefaultDroidQueryResolver, DefaultHeroQue
 object DefaultQueryResolverImpl extends App {
 
   var url = "http://localhost:8080/graphql"
-  val defaultDroidQueryResolver = new DefaultDroidQueryResolver(new GrowingIOConfig(url))
+  val defaultDroidQueryResolver = new $DroidQueryResolver(new GrowingIOConfig(url))
   println(defaultDroidQueryResolver.droid("2001"))
 
-  val defaultHeroQueryResolver = new DefaultHeroQueryResolver(new GrowingIOConfig(url))
+  val defaultHeroQueryResolver = new $HeroQueryResolver(new GrowingIOConfig(url))
   println(defaultHeroQueryResolver.hero(EpisodeDO.EMPIRE))
 
-  val defaultHumanQueryResolver = new DefaultHumanQueryResolver(new GrowingIOConfig(url))
+  val defaultHumanQueryResolver = new $HumanQueryResolver(new GrowingIOConfig(url))
   println(defaultHumanQueryResolver.human("1002"))
 
-  val defaultHumansQueryResolver = new DefaultHumansQueryResolver(new GrowingIOConfig(url))
+  val defaultHumansQueryResolver = new $HumansQueryResolver(new GrowingIOConfig(url))
   println(defaultHumansQueryResolver.humans())
 
 }

@@ -1,4 +1,4 @@
-package impl;
+package com.github.growing.impl;
 
 import com.kobylynskyi.graphql.codegen.extension.GrowingIOConfig;
 import com.kobylynskyi.graphql.codegen.extension.utils.JavaCollectionUtils;
@@ -8,20 +8,21 @@ import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLRequest;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import com.github.growing.*;
 
 @javax.annotation.Generated(
     value = "com.kobylynskyi.graphql.codegen.GraphQLCodegen",
     date = "2020-12-31T23:59:59-0500"
 )
-final public class DefaultAcceptTopicSuggestionMutationResolver implements AcceptTopicSuggestionMutationResolver {
+final public class $AcceptTopicSuggestionMutationResolver implements AcceptTopicSuggestionMutationResolver {
 
     private GrowingIOConfig growingIOConfig;
 
-    public DefaultAcceptTopicSuggestionMutationResolver(GrowingIOConfig growingIOConfig) {
+    public $AcceptTopicSuggestionMutationResolver(GrowingIOConfig growingIOConfig) {
         this.growingIOConfig = growingIOConfig;
     }
 
-    private DefaultAcceptTopicSuggestionMutationResolver() {}
+    private $AcceptTopicSuggestionMutationResolver() {}
 
     @Override
     public AcceptTopicSuggestionPayload acceptTopicSuggestion(AcceptTopicSuggestionInput input) throws Exception {

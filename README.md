@@ -1,7 +1,7 @@
 # GraphQL Codegen #
 
 ![Build](https://github.com/growingio/graphql-java-codegen/workflows/Build/badge.svg)
-[![Gitter](https://badges.gitter.im/graphql-java-codegen/community.svg)](https://gitter.im/graphql-java-codegen/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Discussions](https://img.shields.io/badge/github-discussions-green)](https://github.com/kobylynskyi/graphql-java-codegen/discussions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 GraphQL Java Codegen makes it easy to make your Java application to follow a schema-first approach whether it is a server or client application.
@@ -19,6 +19,9 @@ Following classes can be generated based on your GraphQL schema:
 
 This is a mirror repository, which aims to add some customization functions that are not convenient to implement on the source repository.
 
+**2020-12-22**
+    - Fix the conflict between the default name and the resolver name.
+    
 **2020-10-22** 
     - support to generate default resolver's impl.
 

@@ -56,11 +56,11 @@ class GraphQLCodegenResolverTest {
 
         File[] files = Objects.requireNonNull(implOutputJavaClassesDir.listFiles());
 
-        assertSameTrimmedContent(new File("src/test/resources/expected-classes/growing/resolvers/DefaultAcceptTopicSuggestionMutationResolver.java.txt"),
-                getFileByName(files, "DefaultAcceptTopicSuggestionMutationResolver.java"));
+        assertSameTrimmedContent(new File("src/test/resources/expected-classes/growing/resolvers/$AcceptTopicSuggestionMutationResolver.java.txt"),
+                getFileByName(files, "$AcceptTopicSuggestionMutationResolver.java"));
 
-        assertSameTrimmedContent(new File("src/test/resources/expected-classes/growing/resolvers/DefaultViewerQueryResolver.java.txt"),
-                getFileByName(files, "DefaultViewerQueryResolver.java"));
+        assertSameTrimmedContent(new File("src/test/resources/expected-classes/growing/resolvers/$ViewerQueryResolver.java.txt"),
+                getFileByName(files, "$ViewerQueryResolver.java"));
     }
 
     @Test
@@ -73,11 +73,11 @@ class GraphQLCodegenResolverTest {
 
         File[] files = Objects.requireNonNull(implOutputJavaClassesDirPackage.listFiles());
 
-        assertSameTrimmedContent(new File("src/test/resources/expected-classes/growing/resolvers/with-package/DefaultAcceptTopicSuggestionMutationResolver.java.txt"),
-                getFileByName(files, "DefaultAcceptTopicSuggestionMutationResolver.java"));
+        assertSameTrimmedContent(new File("src/test/resources/expected-classes/growing/resolvers/with-package/$AcceptTopicSuggestionMutationResolver.java.txt"),
+                getFileByName(files, "$AcceptTopicSuggestionMutationResolver.java"));
 
-        assertSameTrimmedContent(new File("src/test/resources/expected-classes/growing/resolvers/with-package/DefaultViewerQueryResolver.java.txt"),
-                getFileByName(files, "DefaultViewerQueryResolver.java"));
+        assertSameTrimmedContent(new File("src/test/resources/expected-classes/growing/resolvers/with-package/$ViewerQueryResolver.java.txt"),
+                getFileByName(files, "$ViewerQueryResolver.java"));
     }
 
 }
