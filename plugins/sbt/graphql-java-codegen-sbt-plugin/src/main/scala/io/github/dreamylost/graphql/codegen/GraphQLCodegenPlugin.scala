@@ -29,7 +29,7 @@ class GraphQLCodegenPlugin(configuration: Configuration, private[codegen] val co
 
   //override this by graphqlJavaCodegenVersion and javaxValidationApiVersion
   private val jValidation = "2.0.1.Final"
-  private val codegen = "gio-3.1.4-SNAPSHOT"
+  private val codegen = "gio-3.1.3"
 
   object GlobalImport extends GraphQLCodegenKeys {
 
