@@ -3,7 +3,7 @@ import sbtrelease.ReleaseStateTransformations._
 
 name := "graphql-codegen-sbt-plugin"
 // must be equals to oss Group Id
-organization := "io.github.jxnu-liguobin"
+organization := "io.growing"
 
 // publish only root project
 //publish / skip := true

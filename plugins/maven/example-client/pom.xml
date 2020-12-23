@@ -139,7 +139,7 @@
 
 
         <dependency>
-            <groupId>io.github.kobylynskyi</groupId>
+            <groupId>io.growing</groupId>
             <artifactId>graphql-java-codegen</artifactId>
             <!-- use the latest available version:
             https://search.maven.org/artifact/io.github.kobylynskyi/graphql-java-codegen -->
