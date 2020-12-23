@@ -27,14 +27,14 @@ object Publishing {
     pomIncludeRepository := { _ => false },
     developers := List(
       Developer(
-        id = "dreamylost",
-        name = "梦境迷离",
-        email = "dreamylost@outlook.com",
-        url = url("https://dreamylost.cn")
+        id = "LiGuoBin",
+        name = "LiGuoBin",
+        email = "liguobin@growingio.com",
+        url = url("https://www.growingio.com")
       )),
     sonatypeProfileName := organization.value,
     isSnapshot := version.value endsWith "SNAPSHOT",
-    homepage := Some(url("https://github.com/jxnu-liguobin")),
+    homepage := Some(url("https://www.growingio.com")),
     scmInfo := Some(
       ScmInfo(
         //it is fork from https://github.com/kobylynskyi/graphql-java-codegen
