@@ -36,7 +36,7 @@ class GraphQLCodegenPlugin(configuration: Configuration, private[codegen] val co
     //should look for a way to automatically add to the classpath
     lazy val GraphQLCodegenPluginDependencies: Def.Setting[Seq[ModuleID]] = libraryDependencies ++= Seq(
       "javax.validation" % "validation-api" % javaxValidationApiVersion.value.getOrElse(jValidation),
-      "io.github.kobylynskyi" % "graphql-java-codegen" % graphqlJavaCodegenVersion.value.getOrElse(codegen)
+      "io.growing" % "graphql-java-codegen" % graphqlJavaCodegenVersion.value.getOrElse(codegen)
     )
 
     lazy val schemaFinderConfig: SchemaFinderConfig = SchemaFinderConfig(null)
