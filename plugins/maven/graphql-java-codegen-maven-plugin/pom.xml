@@ -103,7 +103,7 @@
         </dependency>
 
         <dependency>
-            <groupId>io.github.kobylynskyi</groupId>
+            <groupId>io.growing</groupId>
             <artifactId>graphql-java-codegen</artifactId>
             <version>${version.graphql-java-codegen}</version>
         </dependency>

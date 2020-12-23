@@ -2,7 +2,7 @@ import java.util
 
 name := "example-client"
 
-organization := "io.github.jxnu-liguobin"
+organization := "io.growing"
 
 libraryDependencies ++= Seq(
   "org.apache.logging.log4j" %% "log4j-api-scala" % "11.0",

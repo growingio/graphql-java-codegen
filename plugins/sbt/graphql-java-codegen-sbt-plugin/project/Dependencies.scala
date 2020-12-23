@@ -20,7 +20,7 @@ object Dependencies {
 
   object Compiles {
     val selfDependencies = libraryDependencies ++= Seq(
-      "io.github.kobylynskyi" % "graphql-java-codegen" % codegen
+      "io.growing" % "graphql-java-codegen" % codegen
     )
   }
 
