@@ -20,11 +20,13 @@ Following classes can be generated based on your GraphQL schema:
 This is a mirror repository, which aims to add some customization functions that are not convenient to implement on the source repository.
 
 **2020-12-22**
-    - Fix the conflict between the default name and the resolver name.
-    - Modify groupId for the library and SBT plugin to prepare for the release of the library and SBT plugin.
+
+- Fix the conflict between the default name and the resolver name.
+- Modify groupId for the library and SBT plugin to prepare for the release of the library and SBT plugin.
     
 **2020-10-22** 
-    - support to generate default resolver's impl.
+
+- support to generate default resolver's impl.
 
 ## Supported plugins
 
