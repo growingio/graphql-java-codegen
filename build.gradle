@@ -92,7 +92,7 @@ publishing {
                 description = "Java Code Generator based on GraphQL schema"
                 url = "https://github.com/growingio/graphql-java-codegen"
                 organization {
-                    name = "io.github.growingio"
+                    name = "io.growingio"
                     url = "https://github.com/growingio"
                 }
                 issueManagement {
