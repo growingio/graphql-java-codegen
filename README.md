@@ -21,6 +21,7 @@ This is a mirror repository, which aims to add some customization functions that
 
 **2020-12-22**
     - Fix the conflict between the default name and the resolver name.
+    - Modify groupId for the library and SBT plugin to prepare for the release of the library and SBT plugin.
     
 **2020-10-22** 
     - support to generate default resolver's impl.
