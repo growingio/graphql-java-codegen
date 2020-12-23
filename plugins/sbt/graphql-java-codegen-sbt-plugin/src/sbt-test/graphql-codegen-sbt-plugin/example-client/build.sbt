@@ -17,7 +17,7 @@ libraryDependencies ++= Seq(
 
 enablePlugins(GraphQLCodegenPlugin)
 
-graphqlJavaCodegenVersion := Some("gio-3.1.3-SNAPSHOT")
+graphqlJavaCodegenVersion := Some("gio-3.1.4-SNAPSHOT")
 
 GraphQLCodegenPluginDependencies
 
