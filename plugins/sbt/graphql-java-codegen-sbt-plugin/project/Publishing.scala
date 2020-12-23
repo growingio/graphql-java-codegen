@@ -13,7 +13,7 @@ object Publishing {
 
   //publish by sbt publishSigned
   lazy val publishSettings = Seq(
-    credentials += Credentials(Path.userHome / ".ivy2" / ".sonatype_credentials"),
+    credentials += Credentials(Path.userHome / ".ivy2" / ".sonatype_credentials_gio"),
     publishTo := {
       val nexus = "https://oss.sonatype.org/"
       if (isSnapshot.value)
@@ -38,8 +38,8 @@ object Publishing {
     scmInfo := Some(
       ScmInfo(
         //it is fork from https://github.com/kobylynskyi/graphql-java-codegen
-        url("https://github.com/jxnu-liguobin/graphql-java-codegen"),
-        "scm:git@github.com:jxnu-liguobin/graphql-java-codegen.git"
+        url("https://github.com/growingio/graphql-java-codegen"),
+        "scm:git@github.com:growingio/graphql-java-codegen.git"
       ))
   )
 }

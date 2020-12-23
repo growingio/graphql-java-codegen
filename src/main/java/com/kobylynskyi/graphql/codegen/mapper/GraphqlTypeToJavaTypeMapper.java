@@ -34,10 +34,10 @@ public class GraphqlTypeToJavaTypeMapper {
 
     /**
      * Get nested type of GraphQL Type. Example:
-     * Event -> Event
-     * Event! -> Event
-     * [Event!]! -> Event
-     * [[Event]] -> Event
+     * Event - Event
+     * Event! - Event
+     * [Event!]! - Event
+     * [[Event]] - Event
      *
      * @param graphqlType GraphQL type
      * @return GraphQL type without List/NonNull wrapping
